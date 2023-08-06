@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- GOOGLE FONT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;700&family=Finlandica:wght@400;600;700&family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@300;400;700&family=Nunito:wght@300;400;700&family=Open+Sans:wght@300;400;700&family=Roboto+Condensed:wght@300;400;700&family=Roboto:wght@300;400;500;700&family=Signika+Negative:wght@300;400;700&family=Space+Grotesk:wght@300;400;700&family=Work+Sans:wght@300;400;700&display=swap"
+        rel="stylesheet">
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- MAIN CSS -->
+    <link rel="stylesheet" href="./style.css">
+    <title>ĐĂNG KÍ CỘNG TÁC VIÊN - TRĂNG SÁNG VÙNG CAO 2023</title>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Left side - logo, image -->
+        <div class="img-container">
+            <img src="./title-01.png" alt="program title">
+            <p> <a href="https://www.facebook.com/dtqt.dtu" target="_blank">Thông tin chi tiết</a> </p>
+        </div>
+        <!-- Right side - form -->
+        <div class="form-container">
+            <form class="form-vlt" id="form-vlt">
+                <header>
+                    <h1>ĐĂNG KÍ CỘNG TÁC VIÊN</h1>
+                </header>
+                <main>
+                    <div class="form-group">
+                        <label for="name">Họ và tên</label>
+                        <input autocomplete="off"  type="text" name="name" id="name" placeholder="Điền họ và tên" required> 
+                        <span class="error-message"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="class">Lớp</label>
+                        <input autocomplete="off" type="text" name="class" id="class" placeholder="Ví dụ: K27 CMU TPM1" required>
+                        <span class="error-message"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Số điện thoại</label>
+                        <input autocomplete="off" type="tel" name="phone" id="phone" placeholder="Ví dụ: 0345789435" required>
+                        <span class="error-message"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="link">Link facebook</label>
+                        <input autocomplete="off"  type="url" name="link" id="link" placeholder="Ví dụ: /facebook.thuyphuocthinh" required>
+                        <span class="error-message"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input autocomplete="off"  type="email" name="email" id="email" placeholder="Ví dụ: tpt@gmail.com" required>
+                        <span class="error-message"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="feature">Điểm mạnh, điểm yếu</label>
+                        <input autocomplete="off"  type="text" name="feature" id="feature" placeholder="Điền ở đây" required>
+                        <span class="error-message"></span>
+                    </div>
+                </main>
+                <footer>
+                    <button type="submit">ĐĂNG KÍ</button>
+                </footer>
+            </form>
+        </div>
+    </div>
+    <script src="./validator.js"></script>
+    <script>
+        Validator({
+            form: "#form-vlt",
+            rules: [
+                Validator.isRequired("#name"),
+                Validator.isRequired("#class"),
+                Validator.isRequired("#phone"),
+                Validator.isRequired("#link"),
+                Validator.isRequired("#feature"),
+                Validator.isEmail("#email")
+            ]
+        });
+    </script>
+</body>
+
+</html>

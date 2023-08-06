@@ -1,0 +1,246 @@
+/* GLOBAL */
+body,
+html {
+    font-size: 16px;
+    padding: 0;
+    margin: 0;
+    font-family: 'Exo 2', sans-serif;
+    font-family: 'Finlandica', sans-serif;
+    font-family: 'Inter', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Nunito', sans-serif;
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-family: 'Signika Negative', sans-serif;
+    font-family: 'Space Grotesk', sans-serif;
+    font-family: 'Work Sans', sans-serif;
+}
+
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+ul {
+    list-style: none;
+}
+
+/* container */
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    background-image: url("./background.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+/* img-container */
+
+.img-container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+}
+
+.img-container img {
+    width: max(80%, 300px);
+    height: auto;
+}
+
+.img-container p {
+    margin-bottom: 2rem;
+}
+
+.img-container p a {
+    margin: 0 auto;
+    color: black;
+    font-size: .9rem;
+    display: inline-block;
+    width: 150px;
+    height: 40px;
+    background-color: yellow;
+    border-radius: 5px;
+    line-height: 40px;
+    text-align: center;
+    font-weight: bold;
+    box-shadow: 0px 2px 2px 1px black;
+    transition: all .5s;
+}
+
+.img-container p a:hover {
+    box-shadow: none;
+}
+
+/* form-container */
+
+.form-container {
+    width: 100%;
+    background-color: #D9D9D9;
+    opacity: .8;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    /* padding: 1rem; */
+    align-items: center;
+    justify-content: center;
+
+}
+
+.form-vlt {
+    width: min(100%, 450px);
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin: 0 auto;
+    height: 70%;
+}
+
+.form-vlt main {
+    overflow-y: hidden;
+}
+
+.form-vlt main:hover {
+    overflow-y: scroll;
+}
+
+.form-vlt main::-webkit-scrollbar {
+    width: 5px;
+}
+
+.form-vlt main::-webkit-scrollbar-thumb {
+    background-color: rgb(119, 119, 119);
+}
+
+.form-vlt main::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+.form-vlt header h1 {
+    text-align: center;
+    font-size: 2.2rem;
+    color: black;
+    font-weight: bold;
+    margin: 0;
+}
+
+.form-vlt .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.form-vlt main {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.form-group label {
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.form-group input {
+    margin: 0 auto;
+    width: 99%;
+    height: 45px;
+    background-color: transparent;
+    border: 2px solid black;
+    border-radius: 10px;
+    outline: none;
+    padding-left: .5rem;
+    transition: all .1s;
+}
+
+.form-group input:hover {
+    border-color: blue;
+}
+
+.form-group input:focus {
+    outline: 2px solid blue;
+    outline-offset: 0.5px;
+}
+
+.form-vlt footer button {
+    width: 100%;
+    height: 45px;
+    background-color: rgba(0, 0, 0, 1);
+    color: white;
+    font-size: 1rem;
+    border-color: 1px solid black;
+    border-radius: 10px;
+    letter-spacing: 1px;
+    transition: all .5s;
+}
+
+.form-vlt footer button:hover {
+    background-color: yellow;
+    border-color: 1px solid yellow;
+    color: black;
+    cursor: pointer;
+}
+
+/* Validator */
+.form-group .valid {
+    border: 2px solid green;
+}
+
+.form-group .invalid {
+    border: 2px solid red;
+}
+
+.error-message {
+    font-size: .8rem;
+    color: red;
+}
+
+/* RESPONSIVE */
+
+@media screen and (max-width:1200px) {
+
+    .form-vlt main:hover {
+        overflow: hidden;
+    }
+
+    .form-vlt {
+        width: min(100%, 350px);
+    }
+
+    .form-vlt header h1 {
+        font-size: 1.7rem;
+    }
+}
+
+@media screen and (max-width:798px) {
+
+    .form-container {
+        height: 100%;
+        padding: 3rem 0;
+    }
+
+    .form-vlt {
+        height: 100%;
+        overflow-y: hidden;
+    }
+
+    .container {
+        grid-template-columns: repeat(1, 1fr);
+        height: 100%;
+    }
+}
